@@ -16,6 +16,13 @@ your Home Assistant machine.
 Add a connection in the app the same way as the desktop version. For the
 Mosquitto broker add-on, the host is `core-mosquitto` and the port 1883.
 
+## Pop-out windows
+
+The desktop app opens charts and the broker status page in separate windows.
+Here they open as browser tabs on the same address, and re-opening the same
+chart focuses its existing tab. The add-on runs without ingress for now, so
+these tabs talk straight to port 8080 like the main page does.
+
 ## Data
 
 Everything you save (connections, settings, message recordings) lives in the
