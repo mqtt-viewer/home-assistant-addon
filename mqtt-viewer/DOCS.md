@@ -3,42 +3,53 @@
 Runs [MQTT Viewer](https://github.com/mqtt-viewer/mqtt-viewer) as a web app on
 your Home Assistant machine.
 
+## Availability
+
+The add-on manifest pins `ghcr.io/mqtt-viewer/mqtt-viewer:1.3.0`. That image tag
+is not published yet, so Home Assistant cannot install the add-on. The add-on
+version must match a published image tag. It remains at `1.3.0` while waiting
+for the matching MQTT Viewer release.
+
 ## Installation
 
-1. Add this repository to the add-on store:
-   Settings, Add-ons, Add-on store, three-dot menu, Repositories, then paste
+1. Add this repository to the add-on store: Settings, Add-ons, Add-on store,
+   three-dot menu, Repositories, then paste
    `https://github.com/mqtt-viewer/home-assistant-addon`.
 2. Install the MQTT Viewer add-on and start it.
-3. Open the web UI on port 8080 (the "Open web UI" button).
+3. Select **Open Web UI**.
+
+Home Assistant opens MQTT Viewer through ingress. The interface is protected by
+your Home Assistant authentication.
 
 ## Connecting to your broker
 
 Add a connection in the app the same way as the desktop version. For the
-Mosquitto broker add-on, the host is `core-mosquitto` and the port 1883.
+Mosquitto broker add-on, use `core-mosquitto` as the host and `1883` as the
+port.
 
-## Pop-out windows
+## Browser-mode differences
 
-The desktop app opens charts and the broker status page in separate windows.
-Here they open as browser tabs on the same address, and re-opening the same
-chart focuses its existing tab. The add-on runs without ingress for now, so
-these tabs talk straight to port 8080 like the main page does.
+The desktop app opens charts in separate windows. Here they open as browser
+tabs through ingress, and re-opening the same chart focuses its existing tab.
+The broker-status device-monitoring control is hidden in browser mode.
 
 ## Data
 
-Everything you save (connections, settings, message recordings) lives in the
-add-on's private `/data` directory and survives updates and restarts.
-Uninstalling the add-on deletes it.
+Saved connections, settings and message recordings live in the add-on's private
+`/data` directory. They survive updates and restarts. Uninstalling the add-on
+deletes them.
 
 ## Security
 
-The web UI has no login of its own. The add-on publishes port 8080 on your
-Home Assistant host, so anyone on your network who can reach that port can use
-your saved connections. Keep it to a trusted network or firewall the port.
-Ingress support (which would put the UI behind Home Assistant's own login) is
-planned; follow
-[issue #119](https://github.com/mqtt-viewer/mqtt-viewer/issues/119).
+Ingress puts the interface behind Home Assistant authentication. The add-on
+runs without host networking or extra privileges, and its direct host port is
+disabled by default.
+
+A user can expose port 8080 from the add-on's Network settings for testing.
+Direct access bypasses Home Assistant ingress and its authentication, so only
+expose it on a trusted network and remove the mapping after testing.
 
 ## Updates
 
-The add-on version tracks the MQTT Viewer release it runs. Update from the
+The add-on version tracks the MQTT Viewer image tag it runs. Update from the
 add-on page when a new version appears.
