@@ -54,9 +54,10 @@ disabled by default.
 
 A user can expose port 8080 from the add-on's Network settings for testing.
 Direct access bypasses Home Assistant ingress and its authentication. Anyone
-who can reach the port can control MQTT Viewer and use its saved broker
-connections without signing in. Only expose it on a trusted network and remove
-the mapping after testing.
+who can reach the port can control MQTT Viewer, read saved broker passwords and
+use its connections without signing in. Another page open in the same browser
+can also connect to the event stream and read live MQTT traffic. Only expose
+the port on a trusted network and remove the mapping after testing.
 
 ## Updates
 
