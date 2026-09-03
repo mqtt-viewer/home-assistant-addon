@@ -26,4 +26,4 @@ Full instructions and security notes are in
 
 App bugs and feature requests belong in the
 [main repository](https://github.com/mqtt-viewer/mqtt-viewer/issues).
-Packaging problems with this add-on can be filed here.
+Packaging problems with this add-on can be filed here. Please let me know if you have any issues.
