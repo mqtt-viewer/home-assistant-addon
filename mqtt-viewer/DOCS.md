@@ -33,6 +33,14 @@ The desktop app opens charts in separate windows. Here they open as browser
 tabs through ingress, and re-opening the same chart focuses its existing tab.
 The broker-status device-monitoring control is hidden in browser mode.
 
+### TLS certificate paths
+
+The desktop certificate fields use a native file picker. A browser cannot open
+that picker. Place the CA certificate, client certificate and client key you
+need in the add-on's `/data` directory. Enter their paths in the connection's
+TLS settings, for example `/data/ca.pem` or `/data/client.key`. These paths are
+inside the add-on, not paths on the browser's device.
+
 ## Data
 
 Saved connections, settings and message recordings live in the add-on's private
@@ -46,8 +54,10 @@ runs without host networking or extra privileges, and its direct host port is
 disabled by default.
 
 A user can expose port 8080 from the add-on's Network settings for testing.
-Direct access bypasses Home Assistant ingress and its authentication, so only
-expose it on a trusted network and remove the mapping after testing.
+Direct access bypasses Home Assistant ingress and its authentication. Anyone
+who can reach the port can control MQTT Viewer and use its saved broker
+connections without signing in. Only expose it on a trusted network and remove
+the mapping after testing.
 
 ## Updates
 
