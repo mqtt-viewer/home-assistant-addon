@@ -12,10 +12,9 @@ for the matching MQTT Viewer release.
 
 ## Installation
 
-1. Add this repository to the add-on store: Settings, Add-ons, Add-on store,
-   three-dot menu, Repositories, then paste
-   `https://github.com/mqtt-viewer/home-assistant-addon`.
-2. Install the MQTT Viewer add-on and start it.
+1. Go to Settings, Apps, Install app, then open the three-dot menu and select
+   Repositories. Paste `https://github.com/mqtt-viewer/home-assistant-addon`.
+2. Install the MQTT Viewer app and start it.
 3. Select **Open Web UI**.
 
 Home Assistant opens MQTT Viewer through ingress. The interface is protected by
@@ -36,10 +35,10 @@ The broker-status device-monitoring control is hidden in browser mode.
 ### TLS certificate paths
 
 The desktop certificate fields use a native file picker. A browser cannot open
-that picker. Place the CA certificate, client certificate and client key you
-need in the add-on's `/data` directory. Enter their paths in the connection's
-TLS settings, for example `/data/ca.pem` or `/data/client.key`. These paths are
-inside the add-on, not paths on the browser's device.
+that picker. Place the CA certificate, client certificate and client key in
+MQTT Viewer's app configuration folder under `/addon_configs`. Home Assistant
+mounts that folder read-only at `/config` inside the app. Enter paths such as
+`/config/ca.pem` or `/config/client.key` in the connection's TLS settings.
 
 ## Data
 

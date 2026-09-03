@@ -12,14 +12,14 @@ The add-on version must match the image tag, so it remains at `1.3.0`.
 
 [![Open your Home Assistant instance and show the add-on store with this repository pre-filled.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/?repository_url=https%3A%2F%2Fgithub.com%2Fmqtt-viewer%2Fhome-assistant-addon)
 
-Or add it manually: Settings, Add-ons, Add-on store, three-dot menu,
-Repositories, then paste:
+Or add it manually: Settings, Apps, Install app, three-dot menu, Repositories,
+then paste:
 
 ```
 https://github.com/mqtt-viewer/home-assistant-addon
 ```
 
-Install MQTT Viewer from the store, start it, then select **Open Web UI**. Home
+Install MQTT Viewer, start it, then select **Open Web UI**. Home
 Assistant serves the interface through ingress and requires Home Assistant
 authentication. Direct host port access is disabled by default.
 
