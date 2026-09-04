@@ -5,9 +5,9 @@ your Home Assistant machine.
 
 ## Availability
 
-The add-on manifest pins `ghcr.io/mqtt-viewer/mqtt-viewer:1.3.0`. That image tag
+The add-on manifest pins `ghcr.io/mqtt-viewer/mqtt-viewer:1.1.0`. That image tag
 is not published yet, so Home Assistant cannot install the add-on. The add-on
-version must match a published image tag. It remains at `1.3.0` while waiting
+version must match a published image tag. It remains at `1.1.0` while waiting
 for the matching MQTT Viewer release.
 
 ## Installation
