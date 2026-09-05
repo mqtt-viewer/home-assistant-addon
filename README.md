@@ -3,11 +3,9 @@
 Run [MQTT Viewer](https://github.com/mqtt-viewer/mqtt-viewer) on your Home
 Assistant machine and use it from a browser.
 
-**Status: waiting on the first published Docker image.** This add-on installs
-`ghcr.io/mqtt-viewer/mqtt-viewer` at the version pinned in
-[mqtt-viewer/config.yaml](mqtt-viewer/config.yaml). Until that tag exists on
-GHCR the add-on will not install. It goes live with the next MQTT Viewer
-release.
+This add-on installs `ghcr.io/mqtt-viewer/mqtt-viewer` at the version pinned
+in [mqtt-viewer/config.yaml](mqtt-viewer/config.yaml). Each MQTT Viewer
+release bumps that pin automatically, so the add-on tracks the app.
 
 ## Add the repository
 
