@@ -12,21 +12,17 @@ arch:
   - aarch64
 image: ghcr.io/mqtt-viewer/mqtt-viewer
 init: false
+map:
+  - type: addon_config
 ports:
-  8080/tcp: 8080
+  8080/tcp: null
 ports_description:
-  8080/tcp: Web UI
-webui: http://[HOST]:[PORT:8080]
+  8080/tcp: Direct Web UI
 panel_icon: mdi:lan
 panel_title: MQTT Viewer
 environment:
   MQTT_VIEWER_DATA_DIR: /data
-  # Shows "update the add-on" guidance when a new version is available,
-  # instead of docker pull instructions. Needs an image with install-type
-  # support; harmless on older images.
   MQTT_VIEWER_INSTALL_TYPE: home-assistant
-# Ingress (the UI inside the Home Assistant sidebar behind HA's own auth) is
-# not enabled yet. The app itself now supports running behind a path prefix
-# (mqtt-viewer PR #128); ingress flips on here once an image containing that
-# support is published.
-ingress: false
+ingress: true
+ingress_port: 8080
+ingress_stream: true
