@@ -3,10 +3,9 @@
 Run [MQTT Viewer](https://github.com/mqtt-viewer/mqtt-viewer) on your Home
 Assistant machine and use it through Home Assistant ingress.
 
-**Status: waiting on the first published Docker image.** The manifest pins
-`ghcr.io/mqtt-viewer/mqtt-viewer:1.1.0`, but that image tag is not published.
-The add-on cannot install until the matching MQTT Viewer release publishes it.
-The add-on version must match the image tag, so it remains at `1.1.0`.
+This add-on installs `ghcr.io/mqtt-viewer/mqtt-viewer` at the version pinned
+in [mqtt-viewer/config.yaml](mqtt-viewer/config.yaml). Each MQTT Viewer
+release bumps that pin automatically, so the add-on tracks the app.
 
 ## Add the repository
 
@@ -33,4 +32,4 @@ Full instructions and security notes are in
 
 App bugs and feature requests belong in the
 [main repository](https://github.com/mqtt-viewer/mqtt-viewer/issues).
-Packaging problems with this add-on can be filed here.
+Packaging problems with this add-on can be filed here. Please let me know if you have any issues.
