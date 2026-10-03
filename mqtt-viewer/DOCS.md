@@ -3,17 +3,17 @@
 Runs [MQTT Viewer](https://github.com/mqtt-viewer/mqtt-viewer) as a web app on
 your Home Assistant machine.
 
-## Availability
+## Packaging
 
-The add-on manifest pins `ghcr.io/mqtt-viewer/mqtt-viewer:1.1.0`. That image tag
-is not published yet, so Home Assistant cannot install the add-on. The add-on
-version must match a published image tag. It remains at `1.1.0` while waiting
-for the matching MQTT Viewer release.
+Home Assistant builds a small wrapper around the published MQTT Viewer image
+at the version in `config.yaml`. The wrapper prepares the private data
+directory, then runs MQTT Viewer as uid 1000. Installation needs access to the
+image registry and Alpine package repository.
 
 ## Installation
 
 1. Go to Settings, Apps, Install app, then open the three-dot menu and select
-   Repositories. Paste `https://github.com/mqtt-viewer/home-assistant-addon`.
+   Repositories, Add. Paste `https://github.com/mqtt-viewer/home-assistant-addon`.
 2. Install the MQTT Viewer app and start it.
 3. Select **Open Web UI**.
 
@@ -49,7 +49,9 @@ deletes them.
 ## Security
 
 Ingress puts the interface behind Home Assistant authentication. The add-on
-runs without host networking or extra privileges, and its direct host port is
+runs without host networking or extra privileges. A short root initialisation
+step sets ownership of the private data directory before dropping to uid 1000.
+Its direct host port is
 disabled by default.
 
 A user can expose port 8080 from the add-on's Network settings for testing.

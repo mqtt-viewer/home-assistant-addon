@@ -3,8 +3,8 @@
 Run [MQTT Viewer](https://github.com/mqtt-viewer/mqtt-viewer) on your Home
 Assistant machine and use it through Home Assistant ingress.
 
-This add-on installs `ghcr.io/mqtt-viewer/mqtt-viewer` at the version pinned
-in [mqtt-viewer/config.yaml](mqtt-viewer/config.yaml). Each MQTT Viewer
+This add-on builds a small wrapper around `ghcr.io/mqtt-viewer/mqtt-viewer`
+at the version pinned in [mqtt-viewer/config.yaml](mqtt-viewer/config.yaml). Each MQTT Viewer
 release bumps that pin automatically, so the add-on tracks the app.
 
 ## Add the repository
@@ -12,7 +12,7 @@ release bumps that pin automatically, so the add-on tracks the app.
 [![Open your Home Assistant instance and show the add-on store with this repository pre-filled.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/?repository_url=https%3A%2F%2Fgithub.com%2Fmqtt-viewer%2Fhome-assistant-addon)
 
 Or add it manually: Settings, Apps, Install app, three-dot menu, Repositories,
-then paste:
+select Add, then paste:
 
 ```
 https://github.com/mqtt-viewer/home-assistant-addon
