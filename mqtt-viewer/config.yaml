@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest for MQTT Viewer.
 #
 # version must match a published tag of ghcr.io/mqtt-viewer/mqtt-viewer;
-# Home Assistant pulls <image>:<version>. Bump it when a new image ships.
+# Supervisor builds the small wrapper from that tag. Bump it when a new image ships.
 name: MQTT Viewer
 version: "1.1.0"
 slug: mqtt_viewer
@@ -10,7 +10,6 @@ url: https://github.com/mqtt-viewer/mqtt-viewer
 arch:
   - amd64
   - aarch64
-image: ghcr.io/mqtt-viewer/mqtt-viewer
 init: false
 map:
   - type: addon_config

@@ -16,3 +16,15 @@ jobs:
       - uses: frenck/action-app-linter@v2
         with:
           path: ./mqtt-viewer
+
+  data-permissions:
+    name: Fresh data permissions and restart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build add-on wrapper
+        run: |
+          version=$(sed -n 's/^version: "\(.*\)"/\1/p' mqtt-viewer/config.yaml)
+          docker build --build-arg BUILD_VERSION="$version" --build-arg BUILD_ARCH=amd64 -t mqtt-viewer-addon:test mqtt-viewer
+      - name: Verify data initialisation
+        run: tests/verify-data-init.sh mqtt-viewer-addon:test
