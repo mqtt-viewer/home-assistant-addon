@@ -11,5 +11,8 @@ add-on's private data directory.
 Ingress keeps the interface behind Home Assistant authentication. Direct port
 access is disabled by default.
 
+Follow the [illustrated installation walkthrough](../README.md#installation-walkthrough)
+to install the app and check your first message.
+
 See the [documentation](DOCS.md) for installation, broker connection and
 security details.
