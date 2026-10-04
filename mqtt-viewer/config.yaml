@@ -3,7 +3,7 @@
 # version must match a published tag of ghcr.io/mqtt-viewer/mqtt-viewer;
 # Supervisor builds the small wrapper from that tag. Bump it when a new image ships.
 name: MQTT Viewer
-version: "1.1.0"
+version: "1.2.0"
 slug: mqtt_viewer
 description: A fast MQTT visualisation and debugging tool, served to your browser
 url: https://github.com/mqtt-viewer/mqtt-viewer
