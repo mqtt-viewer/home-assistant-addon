@@ -1,6 +1,6 @@
 # Supervisor supplies BUILD_VERSION from config.yaml. Reuse the published app
 # binary and assets, with only the Home Assistant volume initialisation added.
-ARG BUILD_VERSION=1.1.0
+ARG BUILD_VERSION=1.2.0
 FROM ghcr.io/mqtt-viewer/mqtt-viewer:${BUILD_VERSION}
 
 USER root
