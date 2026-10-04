@@ -30,7 +30,7 @@ port.
 
 The desktop app opens charts in separate windows. Here they open as browser
 tabs through ingress, and re-opening the same chart focuses its existing tab.
-The broker-status device-monitoring control is hidden in browser mode.
+Open **Broker status** from the view selector beside **List** and **Graph**.
 
 ### TLS certificate paths
 

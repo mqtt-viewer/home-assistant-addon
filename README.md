@@ -69,8 +69,7 @@ Expand **walkthrough** and **office** in the topic tree, then select
 
 ![MQTT Viewer through Home Assistant ingress showing the received temperature payload](docs/images/home-assistant/04-received.png)
 
-MQTT Viewer's broker-status device-monitoring control is hidden in browser
-mode, including this add-on.
+Open **Broker status** from the view selector beside **List** and **Graph**.
 
 Full instructions and security notes are in
 [mqtt-viewer/DOCS.md](mqtt-viewer/DOCS.md).
